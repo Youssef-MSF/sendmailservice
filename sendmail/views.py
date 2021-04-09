@@ -7,6 +7,8 @@ from django.http import HttpResponse
 def send_mail(request):
     # Sender email
     sender_email = "linked.clubs@gmail.com"
+    # passwd
+    passwd = "*********"
     # Receiver email
     receiver_email = request.GET['rec']
     # Message to send
@@ -20,7 +22,7 @@ def send_mail(request):
     server.starttls()
 
     # Login
-    server.login(sender_email, "linkedclubs2020")
+    server.login(sender_email, passwd)
     print("Login success !")
 
     # Send the message
